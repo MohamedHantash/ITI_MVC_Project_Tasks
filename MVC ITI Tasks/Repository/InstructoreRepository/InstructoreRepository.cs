@@ -1,4 +1,5 @@
-﻿using MVC_ITI_Tasks.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MVC_ITI_Tasks.Models;
 
 namespace MVC_ITI_Tasks.Repository
 {
@@ -11,11 +12,27 @@ namespace MVC_ITI_Tasks.Repository
         }
         public List<Instructore> GetAll()
         {
-            return _context.Instructores.ToList();
+            return _context.Instructores.Include(d => d.Department).Include(c=>c.Courses).ToList();
         }
         public Instructore GetById(int id)
         {
             return _context.Instructores.FirstOrDefault(i => i.Id == id);
+        }
+        public void Add(Instructore instructore)
+        {
+            _context.Instructores.Add(instructore);
+        }
+        public void Update(Instructore instructore)
+        {
+            _context.Instructores.Update(instructore);
+        }
+        public void Delete(int id)
+        {
+            _context.Instructores.Remove(GetById(id));
+        }
+        public int Save()
+        {
+            return _context.SaveChanges();
         }
     }
 }

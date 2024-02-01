@@ -1,0 +1,72 @@
+﻿@model Instructore
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add Instructore</h2>
+<br />
+<form method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"  class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+     <div>
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary"  class="form-control"/>
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+     <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address"  class="form-control"/>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+     <div>
+        <label asp-for="ImageURL"></label>
+        <input asp-for="ImageURL"  class="form-control"/>
+        <span asp-validation-for="ImageURL" class="text-danger"></span>
+    </div>
+     <div>
+        <label asp-for="Dept_Id"></label>
+        <select name="Dept_Id" class="form-control">
+            @foreach (Department item in ViewBag.deptList)
+            {
+                if (Model?.Dept_Id == item.Id)
+                {
+                    <option value="@item.Id" selected>@item.Name</option>
+                } 
+                 else
+                 { 
+                    <option value="@item.Id">@item.Name</option>
+                 } 
+            }
+        </select>
+        
+        <span asp-validation-for="Dept_Id" class="text-danger"></span>
+    </div>
+     <div>
+        <label asp-for="Course_Id"></label>
+        <select name="Course_Id" class="form-control">
+            @foreach (Courses item in ViewBag.courseList)
+            {
+                if (Model?.Course_Id == item.Id)
+                {
+                    <option value="@item.Id" selected>@item.Name</option>
+                }
+                else
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            }
+        </select>
+        <span asp-validation-for="Course_Id" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-success" value="Add" />
+    <a asp-action="GetAll" class="btn btn-success" >Back To List</a>
+</form>
+
+@section Scripts{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

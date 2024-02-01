@@ -1,0 +1,18 @@
+﻿@model Instructore
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="card" style="width:300px;border-block-color:blue">
+    <img src="~/Images/@Model.ImageURL" style="width:80px">
+    <div class="container">
+        <h4> Name  = <b>@Model.Name</b></h4>
+        <h4> Salary = <b>@Model.Salary</b></h4>
+        <h4> Address = <b>@Model.Address</b></h4>
+    </div>
+</div>
+<div>
+    <a asp-action="GetAll" class="btn btn-success">Back To List</a>
+</div>

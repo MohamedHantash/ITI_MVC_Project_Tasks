@@ -1,0 +1,39 @@
+﻿@model List<Courses>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>Courses</h1>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Degree</td>
+            <td>MinDegree</td>
+            <td>Department</td>
+            <td></td>
+        </tr>
+    </thead>
+    @foreach(Courses item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Degree</td>
+            <td>@item.MinDegree</td>
+            <td>@item.Department.Name</td>
+            <td>
+                <a asp-action="Details" asp-controller="Course" asp-route-Id="@item.Id"
+                   class="btn btn-primary">Details</a>
+                <a asp-action="Edit" asp-controller="Course" asp-route-Id="@item.Id"
+                   class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-controller="Course" asp-route-Id="@item.Id"
+                   class="btn btn-danger" onclick="return confirm('Are you sure to delete item..?')">Detele</a>
+            </td>
+        </tr>
+        
+    }
+</table>
+<a asp-action="Add" asp-controller="Course"  class="btn btn-success">Add Course</a>

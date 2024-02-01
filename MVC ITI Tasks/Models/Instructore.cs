@@ -13,11 +13,13 @@ namespace MVC_ITI_Tasks.Models
         public string ImageURL {  get; set; } = string.Empty;
 
 
+        [Display(Name ="Department")]
         [ForeignKey("Department")]
         public int Dept_Id { get; set; }
         public Department? Department { get; set; }
 
 
+        [Display(Name ="Courses")]
         [ForeignKey("Courses")]
         public int Course_Id { get; set; }
         public Courses? Courses { get; set; }

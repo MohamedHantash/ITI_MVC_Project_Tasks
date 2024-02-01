@@ -19,7 +19,8 @@ namespace MVC_ITI_Tasks
 
             // Dependency injection Services
             builder.Services.AddScoped<IInstructoreRepository, InstructoreRepository>();
-
+            builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

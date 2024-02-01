@@ -1,0 +1,22 @@
+﻿@model MVC_ITI_Tasks.Models.Courses
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<div class="card" style="width:300px;border-block-color:blue">
+  
+    <div class="container">
+        <h4> ID = <b>@Model.Id</b></h4>
+        <h4> Name = <b>@Model.Name</b></h4>
+        <h4> Degree = <b>@Model.Degree</b></h4>
+        <h4> MinDegree = <b>@Model.MinDegree</b></h4>
+        <h4> Department = <b>@Model.Department.Name </b></h4>
+    </div>
+</div>    
+<div>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
