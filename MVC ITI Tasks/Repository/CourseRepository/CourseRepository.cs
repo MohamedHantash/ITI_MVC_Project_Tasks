@@ -10,19 +10,19 @@ namespace MVC_ITI_Tasks.Repository
         {
             this._context = context;
         }
-        public List<Courses> GetAll()
+        public List<Course> GetAll()
         {
             return _context.Courses.Include(d=>d.Department).ToList();
         }
-        public Courses GetById(int id)
+        public Course GetById(int id)
         {
             return _context.Courses.Include(c=>c.Department).FirstOrDefault(c => c.Id == id);
         }
-        public void Update(Courses course)
+        public void Update(Course course)
         {
             _context.Courses.Update(course);
         }
-        public void Add(Courses courses)
+        public void Add(Course courses)
         {
             _context.Courses.Add(courses);
         }

@@ -21,7 +21,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         public IActionResult Details(int id)
         {
-            Courses course =_coursesRepository.GetById(id);
+            Course course =_coursesRepository.GetById(id);
             if(course != null)
             {
                 return View(course);
@@ -36,7 +36,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(Courses course)
+        public IActionResult Add(Course course)
         {
             if(ModelState.IsValid)
             {
@@ -49,7 +49,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         public IActionResult Edit(int id)
         {
-            Courses course = _coursesRepository.GetById(id);
+            Course course = _coursesRepository.GetById(id);
             if(course != null)
             {
                 ViewData["deptList"]=_departmentRepository.GetAll();
@@ -59,7 +59,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Courses course)
+        public IActionResult Edit(Course course)
         {
             if(ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         public IActionResult Delete(int id)
         {
-            Courses course = _coursesRepository.GetById(id);
+            Course course = _coursesRepository.GetById(id);
             if (course != null)
             {
                 _coursesRepository.Delete(id); 

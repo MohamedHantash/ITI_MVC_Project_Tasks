@@ -22,7 +22,7 @@ namespace MVC_ITI_Tasks.Models
         [Display(Name ="Courses")]
         [ForeignKey("Courses")]
         public int Course_Id { get; set; }
-        public Courses? Courses { get; set; }
+        public Course? Courses { get; set; }
 
 
     }

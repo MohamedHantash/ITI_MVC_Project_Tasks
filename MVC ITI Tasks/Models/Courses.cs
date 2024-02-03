@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVC_ITI_Tasks.Models
 {
-    public class Courses
+    public class Course
     {
         [Key]
         public int Id { get; set; } 

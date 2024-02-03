@@ -4,11 +4,11 @@ namespace MVC_ITI_Tasks.Repository
 {
     public interface ICourseRepository
     {
-        void Add(Courses courses);
+        void Add(Course courses);
         void Delete(int id);
-        List<Courses> GetAll();
-        Courses GetById(int id);
+        List<Course> GetAll();
+        Course GetById(int id);
         int Save();
-        void Update(Courses course);
+        void Update(Course course);
     }
 }

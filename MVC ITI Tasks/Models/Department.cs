@@ -7,7 +7,7 @@
         public string Manager { get; set; }=string.Empty;
 
         public List<Instructore>? Instructores { get; set; }
-        public List<Courses>? Courses { get; set; }
+        public List<Course>? Courses { get; set; }
 
         public List<Student>? Students { get; set; }
 

@@ -13,16 +13,18 @@ namespace MVC_ITI_Tasks.Controllers
             this._context=context;
         }
             
-        public IActionResult ShowResult(int student_Id,int course_Id=2)
+        public IActionResult ShowResult(int student_Id,int course_Id=1)
         {
             Student student = _context.Students.Include(s=>s.CourseResults.Where(c=>c.Course_Id==course_Id))
-                .ThenInclude(s=>s.Courses)
+                .ThenInclude(s=>s.Course)
                 .FirstOrDefault(s => s.Id == student_Id);
+            var studentCourseResult = student.CourseResults.FirstOrDefault();
             var viewModelData = new StudentCoursesViewModel();
             viewModelData.Student_Id = student.Id;
             viewModelData.Stuednt_Name= student.Name;
-            viewModelData.Degree = student.CourseResults.FirstOrDefault().Degree;
-            return View(student);
+            viewModelData.Degree = studentCourseResult.Degree;
+            viewModelData.CourseName = studentCourseResult.Course.Name;
+            return View(viewModelData);
         }
     }
 }

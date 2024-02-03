@@ -10,9 +10,9 @@ namespace MVC_ITI_Tasks.Models
         public int Degree { get; set; }
 
 
-        [ForeignKey("Courses")]
+        [ForeignKey("Course")]
         public int Course_Id { get; set; }
-        public Courses? Courses { get; set; }
+        public Course? Course { get; set; }
 
         [ForeignKey("Student")]
         public int Student_Id { get; set; }

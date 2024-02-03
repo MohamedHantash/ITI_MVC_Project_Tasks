@@ -47,7 +47,7 @@
      <div>
         <label asp-for="Course_Id"></label>
         <select name="Course_Id" class="form-control">
-            @foreach (Courses item in ViewBag.courseList)
+            @foreach (Course item in ViewBag.courseList)
             {
                 if (Model?.Course_Id == item.Id)
                 {
