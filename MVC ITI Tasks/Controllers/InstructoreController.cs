@@ -20,12 +20,12 @@ namespace MVC_ITI_Tasks.Controllers
 
         public IActionResult GetAll()
         {
-            List<Instructore> instructoresList =_instructoreRepository.GetAll();
+            List<Instructor> instructoresList =_instructoreRepository.GetAll();
             return View(instructoresList);
         }
         public IActionResult Details(int id) 
         {
-            Instructore instructore = _instructoreRepository.GetById(id);
+            Instructor instructore = _instructoreRepository.GetById(id);
             return View(instructore);
         }
 
@@ -38,7 +38,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(Instructore instructore)
+        public IActionResult Add(Instructor instructore)
         {
             if(ModelState.IsValid)
             {
@@ -53,14 +53,14 @@ namespace MVC_ITI_Tasks.Controllers
 
         public IActionResult Edit(int id)
         {
-            Instructore instructore = _instructoreRepository.GetById(id);
+            Instructor instructore = _instructoreRepository.GetById(id);
             ViewData["deptList"] = _departmentRepository.GetAll();
             ViewData["courseList"]=_courseRepository.GetAll();
             return View(instructore);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Instructore instructore)
+        public IActionResult Edit(Instructor instructore)
         {
             if(ModelState.IsValid)
             {
@@ -75,7 +75,7 @@ namespace MVC_ITI_Tasks.Controllers
         }
         public IActionResult Delete(int id)
         {
-            Instructore instructure = _instructoreRepository.GetById(id);
+            Instructor instructure = _instructoreRepository.GetById(id);
             if(instructure != null)
             {
                 _instructoreRepository.Delete(id); 

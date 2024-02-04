@@ -21,6 +21,7 @@ namespace MVC_ITI_Tasks
             builder.Services.AddScoped<IInstructoreRepository, InstructoreRepository>();
             builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

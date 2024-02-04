@@ -4,11 +4,11 @@ namespace MVC_ITI_Tasks.Repository
 {
     public interface IInstructoreRepository
     {
-        List<Instructore> GetAll();
-        Instructore GetById(int id);
+        List<Instructor> GetAll();
+        Instructor GetById(int id);
         int Save();
-        void Add(Instructore instructore);
-        void Update(Instructore instructore);
+        void Add(Instructor instructore);
+        void Update(Instructor instructore);
         void Delete(int id);
     }
 }

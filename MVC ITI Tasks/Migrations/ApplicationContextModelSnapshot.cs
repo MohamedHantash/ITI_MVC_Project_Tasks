@@ -44,7 +44,7 @@ namespace MVC_ITI_Tasks.Migrations
 
                     b.HasIndex("Student_Id");
 
-                    b.ToTable("CourseResults");
+                    b.ToTable("CourseResults", (string)null);
                 });
 
             modelBuilder.Entity("MVC_ITI_Tasks.Models.Courses", b =>
@@ -72,7 +72,7 @@ namespace MVC_ITI_Tasks.Migrations
 
                     b.HasIndex("Dept_Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("MVC_ITI_Tasks.Models.Department", b =>
@@ -93,7 +93,7 @@ namespace MVC_ITI_Tasks.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("MVC_ITI_Tasks.Models.Instructore", b =>
@@ -131,7 +131,7 @@ namespace MVC_ITI_Tasks.Migrations
 
                     b.HasIndex("Dept_Id");
 
-                    b.ToTable("Instructores");
+                    b.ToTable("Instructores", (string)null);
                 });
 
             modelBuilder.Entity("MVC_ITI_Tasks.Models.Student", b =>
@@ -164,7 +164,7 @@ namespace MVC_ITI_Tasks.Migrations
 
                     b.HasIndex("Dept_Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("MVC_ITI_Tasks.Models.CourseResult", b =>

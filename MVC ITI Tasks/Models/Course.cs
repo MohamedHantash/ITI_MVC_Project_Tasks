@@ -12,11 +12,12 @@ namespace MVC_ITI_Tasks.Models
         public int MinDegree { get; set; }
 
 
+
         [ForeignKey("Department")]
         public int Dept_Id { get; set; }
         public Department? Department { get; set; }
 
-        public List<Instructore>? Instructores { get; set; }
+        public List<Instructor>? Instructors { get; set; }
         public List<CourseResult>? CourseResults { get; set; }
     }
 }

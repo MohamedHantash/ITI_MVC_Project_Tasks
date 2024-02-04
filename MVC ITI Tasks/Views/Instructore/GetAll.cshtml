@@ -1,4 +1,4 @@
-﻿@model List<Instructore>
+﻿@model List<Instructor>
 @{
     ViewData["Title"] = "GetAll";
 }
@@ -19,7 +19,7 @@
 
         </tr>
     </thead>
-    @foreach(Instructore item in Model)
+    @foreach(Instructor item in Model)
     {
         <tr>
             <td>@item.Id</td>
