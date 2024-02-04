@@ -4,12 +4,12 @@ using MVC_ITI_Tasks.Repository;
 
 namespace MVC_ITI_Tasks.Controllers
 {
-    public class InstructoreController : Controller
+    public class InstructorController : Controller
     {
         private readonly IInstructoreRepository _instructoreRepository;
         private readonly IDepartmentRepository _departmentRepository;
         private readonly ICourseRepository _courseRepository;
-        public InstructoreController(IInstructoreRepository instructoreRepository,
+        public InstructorController(IInstructoreRepository instructoreRepository,
             IDepartmentRepository departmentRepository,
             ICourseRepository courseRepository)
         {

@@ -12,23 +12,23 @@ namespace MVC_ITI_Tasks.Repository
         }
         public List<Instructor> GetAll()
         {
-            return _context.Instructores.Include(d => d.Department).Include(c=>c.Courses).ToList();
+            return _context.Instructors.Include(d => d.Department).Include(c=>c.Course).ToList();
         }
         public Instructor GetById(int id)
         {
-            return _context.Instructores.FirstOrDefault(i => i.Id == id);
+            return _context.Instructors.FirstOrDefault(i => i.Id == id);
         }
         public void Add(Instructor instructore)
         {
-            _context.Instructores.Add(instructore);
+            _context.Instructors.Add(instructore);
         }
         public void Update(Instructor instructore)
         {
-            _context.Instructores.Update(instructore);
+            _context.Instructors.Update(instructore);
         }
         public void Delete(int id)
         {
-            _context.Instructores.Remove(GetById(id));
+            _context.Instructors.Remove(GetById(id));
         }
         public int Save()
         {

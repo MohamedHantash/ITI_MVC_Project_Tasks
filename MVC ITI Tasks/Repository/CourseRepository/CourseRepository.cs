@@ -12,7 +12,7 @@ namespace MVC_ITI_Tasks.Repository
         }
         public List<Course> GetAll()
         {
-            return _context.Courses.Include(d=>d.Department).ToList();
+            return _context.Courses.Include(c=>c.Department).ToList();
         }
         public Course GetById(int id)
         {

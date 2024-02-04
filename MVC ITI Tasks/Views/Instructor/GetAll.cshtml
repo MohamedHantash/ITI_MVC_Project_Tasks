@@ -1,9 +1,9 @@
 ﻿@model List<Instructor>
 @{
-    ViewData["Title"] = "GetAll";
+    ViewData["Title"] = "Instructors";
 }
 
-<h1>Instructores </h1>
+<h1>Instructors </h1>
 <br />
 <table class="table">
     <thead>
@@ -28,16 +28,16 @@
             <td>@item.Address</td>
             <td><img src="/Images/@item.ImageURL" style="width:35px"/></td>
             <td>@item.Department.Name</td>
-            <td>@item.Courses.Name</td>
+            <td>@item.Course.Name</td>
             <td>
-                <a asp-action="Details" asp-controller="Instructore" asp-route-Id="@item.Id"
+                <a asp-action="Details" asp-controller="Instructor" asp-route-Id="@item.Id"
                 class="btn btn-primary">Details</a>
-                <a asp-action="Edit" asp-controller="Instructore" asp-route-Id="@item.Id"
+                <a asp-action="Edit" asp-controller="Instructor" asp-route-Id="@item.Id"
                 class="btn btn-primary">Edit</a>
-                <a asp-action="Delete" asp-controller="Instructore" asp-route-Id="@item.Id"
+                <a asp-action="Delete" asp-controller="Instructor" asp-route-Id="@item.Id"
                 class="btn btn-danger" onclick="return confirm('Are you sure to delete item ..?')">Detele</a>
             </td>
         </tr>   
     }
 </table>
-<a asp-action="Add" asp-controller="Instructore" class="btn btn-success">Add Instructore</a>
+<a asp-action="Add" asp-controller="Instructor" class="btn btn-success">Add Instructor</a>
